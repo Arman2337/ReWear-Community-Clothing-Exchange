@@ -8,6 +8,7 @@ import ProductDetail from "./pages/ProductDetail";
 import AdminPanel from "./pages/AdminPanel";
 import BrowseItems from "./pages/BrowseItems";
 import Header from "./components/Header"; // ✅ use Header here
+import AddItem from "./pages/AddItem";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/dashboard" element={<UserDashboard />} />
         <Route path="/product/:id" element={<ProductDetail />} />
         <Route path="/admin" element={<AdminPanel />} />
+        <Route path="/add-item" element={<AddItem />} />
         <Route path="/browse" element={<BrowseItems />} />
       </Routes>
     </Router>
