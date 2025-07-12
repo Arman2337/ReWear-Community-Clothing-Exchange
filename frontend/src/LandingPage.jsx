@@ -13,7 +13,7 @@ const LandingPage = () => {
         <nav className="space-x-6 text-sm font-medium">
           <Link to="/" className="hover:underline">Home</Link>
           <Link to="/browse" className="hover:underline">Browse</Link>
-          <Link to="/" className="hover:underline">Login</Link>
+          <Link to="/login" className="hover:underline">Login</Link> {/* 🔄 Fixed this */}
           <Link to="/register" className="hover:underline">Sign Up</Link>
         </nav>
       </header>
