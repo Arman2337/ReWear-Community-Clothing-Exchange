@@ -82,9 +82,9 @@ ReWear is a web-based platform that enables users to exchange unused clothing th
 
 ## 👥 Team
 
-- 👤 Member 1 – Frontend & UX/UI
-- 👤 Member 2 – Backend & API Integration
-- 👤 Member 3 – Database Design & Admin Panel
+- 👤 Member 1 – Arman - 23it119@charusat.edu.in
+- 👤 Member 2 – Parin - 23it088@charusat.edu.in
+- 👤 Member 3 – Vinay - 23it134@charusat.edu.in
 
 
 
