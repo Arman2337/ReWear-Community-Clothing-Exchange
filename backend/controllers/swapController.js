@@ -1,5 +1,6 @@
 const Item = require('../models/Item');
 const User = require('../models/User');
+const SwapRequest = require("../models/SwapRequest");
 
 // Redeem item via points
 exports.redeemItem = async (req, res) => {
@@ -33,15 +34,29 @@ exports.requestSwap = async (req, res) => {
   try {
     const item = await Item.findById(req.params.itemId);
 
-    if (!item || item.status !== 'available') {
-      return res.status(400).json({ message: 'Item not available' });
+    if (!item || item.status !== "available") {
+      return res.status(400).json({ message: "Item not available" });
     }
 
-    item.status = 'pending'; // can later be approved
-    await item.save();
+    // Prevent users from requesting swap on their own item
+    if (item.owner.toString() === req.user.id) {
+      return res.status(400).json({ message: "You cannot request swap on your own item" });
+    }
 
-    res.json({ message: 'Swap requested!', item });
+    const swap = new SwapRequest({
+      item: item._id,
+      requester: req.user.id,
+      owner: item.owner,
+      status: "pending",
+    });
+
+    item.status = "pending";
+    await item.save();
+    await swap.save();
+
+    res.status(200).json({ message: "Swap requested!", item });
   } catch (err) {
+    console.error("Swap request error:", err);
     res.status(500).json({ error: err.message });
   }
 };

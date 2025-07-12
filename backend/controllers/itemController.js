@@ -35,6 +35,7 @@ exports.getAllItems = async (req, res) => {
 
 exports.getItemById = async (req, res) => {
   try {
+    const type = req.params.type;
     const item = await Item.findById(req.params.id).populate('owner', 'name');
 
     if (!item) {
