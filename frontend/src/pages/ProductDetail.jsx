@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import Header from '../components/Header';
+// import Header from '../components/Header';
 
 const ProductDetail = () => {
   const { id } = useParams(); // for fetching product-specific data later
@@ -8,7 +8,7 @@ const ProductDetail = () => {
   return (
     <div className="min-h-screen bg-[#f5efe5] text-gray-800">
       {/* Header */}
-      <Header />
+      {/* <Header /> */}
 
       {/* Main Product Info */}
       <main className="max-w-6xl mx-auto p-8">
