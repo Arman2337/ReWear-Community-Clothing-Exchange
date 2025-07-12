@@ -50,10 +50,8 @@ ReWear is a web-based platform that enables users to exchange unused clothing th
 |--------------|--------------------|
 | Frontend     | React.js, Tailwind CSS |
 | Backend      | Node.js, Express.js |
-| Database     | MongoDB + Mongoose |
+| Database     | MongoDB + compass |
 | Authentication |  or JWT (bcrypt) |
-| Image Hosting | Cloudinary |
-| Deployment   | Vercel (Frontend + Backend) |
 
 ---
 
@@ -65,7 +63,6 @@ ReWear is a web-based platform that enables users to exchange unused clothing th
 - ✅ Point-based item redemption system
 - ✅ Swap request logic with user interaction
 - ✅ Admin access for moderation
-- ✅ Cloud-based image storage
 
 ---
 
