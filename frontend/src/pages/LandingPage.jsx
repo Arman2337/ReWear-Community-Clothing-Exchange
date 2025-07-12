@@ -5,7 +5,7 @@ const LandingPage = () => {
     return (
         <div className="bg-[#f5efe5] min-h-screen text-gray-800">
             {/* Header */}
-            <header className="flex justify-between items-center px-6 py-4 bg-white shadow-md">
+            {/* <header className="flex justify-between items-center px-6 py-4 bg-white shadow-md">
                 <Link
                     to="/"
                     onClick={() => window.location.href = "/"}
@@ -21,7 +21,7 @@ const LandingPage = () => {
                     <Link to="/login" className="hover:underline">Login</Link>
                     <Link to="/register" className="hover:underline">Sign Up</Link>
                 </nav>
-            </header>
+            </header> */}
 
             {/* Hero Section */}
             <section className="text-center py-12 px-4">

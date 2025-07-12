@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Header from '../components/Header';
+// import Header from '../components/Header';
 
 const mockItems = [
   { id: "1", title: "Vintage Denim Jacket", image: "/sample1.jpg" },
@@ -13,7 +13,7 @@ const BrowseItems = () => {
   return (
     <div className="bg-[#f5efe5] min-h-screen text-gray-800">
       {/* Header */}
-      <Header />
+      {/* <Header /> */}
 
 
       {/* Page Title */}

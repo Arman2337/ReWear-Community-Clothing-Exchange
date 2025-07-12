@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Header from '../components/Header';
+// import Header from '../components/Header';
 
 const UserDashboard = () => {
   return (
     <div className="min-h-screen bg-[#f5efe5] text-gray-800">
       {/* Header */}
-      <Header />
+      {/* <Header /> */}
 
       <main className="p-8 max-w-6xl mx-auto">
         {/* Profile Overview */}

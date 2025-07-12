@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Header from '../components/Header';
+// import Header from '../components/Header';
 
 const ItemDetailPage = () => {
   return (
@@ -17,7 +17,7 @@ const ItemDetailPage = () => {
           <Link to="/login" className="hover:underline">Login</Link>
         </nav>
       </header> */}
-      <Header />
+      {/* <Header /> */}
 
 
       {/* Item detail section */}
