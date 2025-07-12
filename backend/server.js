@@ -5,6 +5,7 @@ require('dotenv').config();
 
 const itemRoutes = require('./routes/itemRoutes');
 const swapRoutes = require('./routes/swapRoutes');
+const authRoutes = require("./routes/authRoutes");
 
 const app = express();
 
@@ -14,6 +15,8 @@ app.use('/uploads', express.static('uploads')); // Serve images
 app.use('/api/items', itemRoutes);
 app.use('/api', swapRoutes); // contains /redeem and /swap
 app.use("/api/dashboard", require("./routes/dashboard"));
+
+app.use("/api", authRoutes);
 
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
