@@ -49,7 +49,13 @@ const AdminPanel = () => {
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {listings.map((item) => (
           <div key={item._id} className="bg-white rounded-lg shadow-md p-4">
-            <img src={item.image} alt={item.title} className="w-full h-48 object-cover rounded mb-3" />
+            {/* <img src={item.image} alt={item.title} className="w-full h-48 object-cover rounded mb-3" /> */}
+            <img
+  src={`http://localhost:5000/${item.imagePath?.replace(/\\/g, "/")}`}
+  alt={item.title}
+  className="w-full h-40 object-cover rounded"
+/>
+
             <h3 className="text-xl font-semibold">{item.title}</h3>
             <p className="text-sm text-gray-600 mb-2">Submitted by: {item.submittedBy}</p>
             <div className="flex justify-between gap-2 mt-3">
