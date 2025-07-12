@@ -175,16 +175,17 @@ const ProductDetail = () => {
   const handleSwapRequest = () => {
   const token = localStorage.getItem("token");
 
-  axios.post(`http://localhost:5000/api/swap/swap/${product._id}`, {}, {
-    headers: { Authorization: `Bearer ${token}` },
-  })
-  .then((res) => {
-    alert(res.data.message);
-  })
-  .catch((err) => {
-    alert(err?.response?.data?.message || "Swap request failed");
-    console.error(err);
-  });
+  axios
+    .post(`http://localhost:5000/api/swap/${product._id}`, {}, {
+      headers: { Authorization: `Bearer ${token}` },
+    })
+    .then((res) => {
+      alert(res.data.message);
+    })
+    .catch((err) => {
+      alert(err?.response?.data?.message || "Swap request failed");
+      console.error(err);
+    });
 };
   const handleEdit = () => {
     navigate(`/edit/${product._id}`);
