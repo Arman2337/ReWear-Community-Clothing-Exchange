@@ -13,9 +13,11 @@ app.use(express.json());
 app.use('/uploads', express.static('uploads')); // Serve images
 app.use('/api/items', itemRoutes);
 app.use('/api', swapRoutes); // contains /redeem and /swap
+app.use("/api/dashboard", require("./routes/dashboard"));
 
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
     app.listen(5000, () => console.log('Server running on port 5000'));
   })
   .catch(err => console.log(err));
+
