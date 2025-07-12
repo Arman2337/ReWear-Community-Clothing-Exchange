@@ -1,23 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
 // import Header from '../components/Header';
+import { fetchItemById } from "../api/item";
 
 const ItemDetailPage = () => {
+  const { id } = useParams();
+  const [item, setItem] = useState(null);
+
+  useEffect(() => {
+    fetchItemById(id)
+      .then((res) => setItem(res.data))
+      .catch(console.error);
+  }, [id]);
+
+  if (!item) return <p className="p-8">Loading...</p>;
   return (
     <div className="min-h-screen bg-[#f5efe5] text-gray-800">
-      {/* Header */}
-      {/* <header className="flex justify-between items-center px-6 py-4 bg-white shadow">
-        <div className="flex items-center gap-2">
-          <img src="/hanger.svg" alt="ReWear Logo" className="w-8 h-8" />
-          <h1 className="text-xl font-bold">ReWear</h1>
-        </div>
-        <nav className="space-x-6 text-sm font-medium">
-          <Link to="/" className="hover:underline">Home</Link>
-          <Link to="/browse" className="hover:underline">Browse</Link>
-          <Link to="/login" className="hover:underline">Login</Link>
-        </nav>
-      </header> */}
-      {/* <Header /> */}
 
 
       {/* Item detail section */}
