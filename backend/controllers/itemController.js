@@ -36,8 +36,43 @@ exports.getAllItems = async (req, res) => {
 exports.getItemById = async (req, res) => {
   try {
     const item = await Item.findById(req.params.id).populate('owner', 'name');
-    res.json(item);
+
+    if (!item) {
+      return res.status(404).json({ error: 'Item not found' });
+    }
+
+    res.status(200).json(item);
   } catch (err) {
-    res.status(404).json({ error: 'Item not found' });
+    console.error("getItemById error:", err);
+    res.status(500).json({ error: 'Server error' });
+  }
+};
+
+exports.getFeaturedItems = async (req, res) => {
+  try {
+    const items = await Item.find().limit(4); // Or use { featured: true } if you have that field
+    res.json(items);
+  } catch (err) {
+    res.status(500).json({ error: 'Server error' });
+  }
+};
+
+// Get latest items (sorted by createdAt descending)
+exports.getLatestItems = async (req, res) => {
+  try {
+    const items = await Item.find().sort({ createdAt: -1 }).limit(8);
+    res.json(items);
+  } catch (err) {
+    res.status(500).json({ error: 'Server error' });
+  }
+};
+
+// Get all categories (if stored statically or as a collection)
+exports.getAllCategories = async (req, res) => {
+  try {
+    const categories = ['Men', 'Women', 'Kids', 'Accessories', 'Shoes', 'Winterwear'];
+    res.json(categories);
+  } catch (err) {
+    res.status(500).json({ error: 'Server error' });
   }
 };
